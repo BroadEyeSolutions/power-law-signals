@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Thank you · Broad Eye Solutions Signals and Attribution Blueprint</title>
+  <!-- Your tag manager container goes here, as on every page. -->
+  <style>body { font: 16px/1.5 system-ui, sans-serif; max-width: 34rem; margin: 2rem auto; padding: 0 1rem; color: #0A2647; }</style>
+</head>
+<body>
+  <!-- Served at /thank-you/next-steps/: the server sends every lead whose answers clear the line here. The page is for the
+       visitor. The address decides nothing: the tag manager fires the qualified conversion on the qualified_conversion
+       event, which this page pushes once, for the lead the server just saved. -->
+  <h1>Thanks. Here's what happens next.</h1>
+  <p>A specialist will call you shortly. To pick a time now, use the booking link in your confirmation email.</p>
+  <script src="/src/submit.js"></script>
+  <!-- Pushes lead_submitted and qualified_conversion once. A reload or a direct visit pushes nothing. -->
+  <script>PLS.thankYou();</script>
+</body>
+</html>

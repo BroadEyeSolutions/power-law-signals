@@ -1,0 +1,9 @@
+form_id,form_name,brand,page,capture_method,built_for_source,built_for_medium,built_for_category,offer,owner,status,created,notes
+WF-0001,Apply now (Meta ads),EX,/apply/,web_form,meta,,Advertising,Funding options,Marketing ops,live,2026-11-01,"Landing page used only in Meta ads, so a lead with no tracking parameters is resolved to Meta"
+WF-0002,Apply now (search),EX,/get-started/,web_form,google,search,Advertising,Funding options,Marketing ops,live,2026-11-01,Search campaigns only
+WF-0003,Contact us,EX,/contact/,web_form,,,,General inquiry,Web team,live,2026-11-01,"Site-wide form, no default source"
+WF-0004,Newsletter sign-up,EX,/newsletter/,web_form,newsletter,,Organic,Newsletter,Marketing ops,live,2026-11-01,
+LA-0001,Meta instant form,EX,(Meta instant form),api,meta,,Advertising,Funding options,Marketing ops,live,2026-11-01,Leads arrive through the CRM integration
+PH-0001,Main phone line,EX,(call tracking),phone_call,,,,,Sales,live,2026-11-01,Use a call-tracking number per channel to resolve the source
+WF-0101,Get a quote (sub-brand site),SB,/quote/,web_form,,,,Quote,Web team,live,2026-11-01,On the sub-brand's own site
+CH-0001,Site chat,EX,(every page),chat,,,,,Sales,live,2026-11-01,Writes the page the chat was opened on as the capture URL

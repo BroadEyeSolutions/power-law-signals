@@ -1,0 +1,5 @@
+campaign_key,platform,campaign_id,campaign_name,pro_campaign,status,override,first_seen,notes
+C00001,meta,120200000000101,lead-gen-revenue-2611,Lead gen · revenue,verified,,2026-11-01,Synthetic example
+C00002,meta,120200000000102,lead-gen-broad-2611,Lead gen · broad,verified,,2026-11-01,Synthetic example
+C00003,google,21000000001,search-brand,Search · brand,verified,,2026-11-01,Synthetic example
+C00004,google,21000000002,search-funding,Search · funding,verified,,2026-11-01,Synthetic example

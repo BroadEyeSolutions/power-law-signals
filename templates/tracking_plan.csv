@@ -1,0 +1,7 @@
+event,fires_when,properties,sent_to,bidding_goal,owner,status
+form_started,first field of a lead form focused,form_id,product analytics,no,web,live
+form_step_completed,each step of a multi-step form completed,form_id; step,product analytics,no,web,live
+lead_submitted,the server confirmed the lead was saved,event_id; lead_id; form_id; capture_method (never the answers or their codes),product analytics; Meta Inquiry (a custom event never optimized for); Google Ads (secondary); GA4 generate_lead,no,marketing ops,live
+qualified_conversion,the server said the answers cleared the line in signal-rules.json (the qualified conversion),event_id; lead_id; value; currency (never the answers or their codes),Meta Lead (browser and Conversions API); Google Ads qualified conversion (primary),yes,marketing ops,live
+application_submitted,the full application saved (opens the SQO on most funnels; not a form step),lead_id,product analytics plus a later conversion (secondary) for leads that qualified on the form,no,web,proposed
+booking_link_clicked,a meeting booking link clicked,booking; location,product analytics,no,web,live

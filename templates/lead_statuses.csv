@@ -1,0 +1,15 @@
+status,track,what it means,the stage it marks,the moves
+new_lead,active,"Assigned, not reached yet","lead, and mql where it meets the criteria","assign; engage (the new-lead cadence); advance: confirm, next step or convert"
+unconfirmed,active,"Being worked, the data and the audience not confirmed yet",lead,"engage (its own cadence); advance: confirm the data and the audience, set the next step, or convert"
+confirmed,active,"The rep confirmed the data and the audience: a real business the offer is for",sal,"engage (its own cadence); advance: set the next step or convert"
+application_sent,active,"The next step is out: the application, the proposal or the demo","sal, on the way to sql","engage (its own cadence); advance: follow up or convert"
+converted,active,The rep converted the lead to an opportunity,sql,The opportunity takes over
+unconfirmed,passive,"Went quiet before it was confirmed: the hand raise is set to off",lead,"A lighter cadence, mostly email. A new hand raise moves it back to active at the same status"
+confirmed,passive,Went quiet after it was confirmed,sal,"A lighter cadence. Ends qualified (keep nurturing) or non-qualified"
+application_sent,passive,Went quiet with the application out,sal,A lighter cadence. A new hand raise moves it back to active
+non_qualified_permanent,passive,"Never a fit: the business closed, out of the market",(lost),"lost_at and a lost_reason from a fixed list. Not worked again"
+non_qualified_reviewable,passive,"Not now: too small today, the wrong time",(lost),"lost_at and a lost_reason. Checked again on a schedule"
+duplicate,none,"A second record for a lead already in the CRM, from an import that missed the match or a mistyped email. It points to the lead it repeats",(none),"Labeled, never merged or deleted. Every performance number leaves it out (analysis/rules)"
+test,none,"A test record, from a launch check or QA",(none),"Labeled, never deleted. Every performance number leaves it out (analysis/rules)"
+out_of_scope,none,"Not a lead for the offer: a job seeker, an existing customer asking for support",(none),"Labeled, never deleted, and passed to whoever handles it. Every performance number leaves it out (analysis/rules)"
+spam,none,"Junk that got past the form's spam rules: no real person or business behind it",(none),"Labeled, never deleted. Every performance number leaves it out (analysis/rules)"

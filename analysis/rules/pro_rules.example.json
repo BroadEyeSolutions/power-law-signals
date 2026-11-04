@@ -1,0 +1,115 @@
+{
+  "_about": "Starter rules for resolving each lead's PRO fields: what to label and leave out of performance numbers (tests, spam, duplicates, out of scope, such as job seekers and existing customers), which sources are advertising platforms, and the evidence used when the tracking tags are missing (click IDs, in-app browsers, referrers). The vocabularies themselves live in the map files in maps/, keyed on the raw values. Raw values are never changed: the resolver writes pro_* columns beside them, plus a *_basis column naming the evidence that decided each one. Every value that matches nothing lands in zNAA (not available; the z sorts it to the bottom of every list) instead of being guessed.",
+  "exclude": [
+    {
+      "field": "utm_source",
+      "equals": "test",
+      "label": "Test"
+    },
+    {
+      "field": "utm_campaign",
+      "equals": "test",
+      "label": "Test"
+    },
+    {
+      "field": "lead_status",
+      "equals": "duplicate",
+      "label": "Duplicate"
+    },
+    {
+      "field": "lead_status",
+      "equals": "out_of_scope",
+      "label": "OoS"
+    },
+    {
+      "field": "lead_status",
+      "equals": "spam",
+      "label": "Spam"
+    },
+    {
+      "field": "lead_status",
+      "equals": "test",
+      "label": "Test"
+    }
+  ],
+  "advertising_sources": [
+    "meta",
+    "google",
+    "microsoft",
+    "linkedin",
+    "tiktok"
+  ],
+  "_website_source": "The source for a web lead with no tags, click ID, form default, browser hint or referrer, grouped by its form ID. Use website, or your site's own domain. Its medium stays zNAA. A visit sourced from its referrer gets the medium organic.",
+  "website_source": "website",
+  "_category_class": "Class, the first cut under the capture method: did an investment bring the lead? Investments are what you pay or partner for (ads, sponsorships, trade shows, referral partners), Inbound what arrived with none. Move a category, or a whole source through its category, by changing this list.",
+  "category_class": {
+    "Advertising": "Investments",
+    "Affiliate": "Investments",
+    "Organic": "Inbound",
+    "Direct Sales": "Inbound",
+    "Legacy": "Inbound"
+  },
+  "click_ids": {
+    "gclid": "google",
+    "gbraid": "google",
+    "wbraid": "google",
+    "fbclid": "meta",
+    "msclkid": "microsoft",
+    "ttclid": "tiktok",
+    "li_fat_id": "linkedin"
+  },
+  "in_app_browsers": {
+    "instagram": {
+      "source": "meta",
+      "medium": "instagram"
+    },
+    "facebook": {
+      "source": "meta",
+      "medium": "facebook"
+    },
+    "messenger": {
+      "source": "meta",
+      "medium": "messenger"
+    },
+    "linkedin": {
+      "source": "linkedin",
+      "medium": null
+    },
+    "tiktok": {
+      "source": "tiktok",
+      "medium": null
+    }
+  },
+  "referrers": [
+    {
+      "host_contains": "google.",
+      "source": "google",
+      "medium": "organic"
+    },
+    {
+      "host_contains": "bing.com",
+      "source": "microsoft",
+      "medium": "organic"
+    },
+    {
+      "host_contains": "duckduckgo.com",
+      "source": "duckduckgo",
+      "medium": "organic"
+    },
+    {
+      "host_contains": "facebook.com",
+      "source": "meta",
+      "medium": "organic"
+    },
+    {
+      "host_contains": "instagram.com",
+      "source": "meta",
+      "medium": "organic"
+    },
+    {
+      "host_contains": "linkedin.com",
+      "source": "linkedin",
+      "medium": "organic"
+    }
+  ]
+}

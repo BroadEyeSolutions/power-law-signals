@@ -1,0 +1,2 @@
+signal_id,name,rule,source_field,captured_at,known_at,lift,ab_per_100_leads,baseline_ab_per_100_leads,coverage,recall,sample_accounts,sample_cohorts,installed_in,owner,status,go_live,last_checked,notes,line_before,line_after,effective_month,counts_30d
+SG-001,Monthly sales $30k and up,code_monthly_sales starts with 11,monthly_sales,web form WF-0001 and WF-0002,form submit,,,,,,,,bidding goal; lead score; routing,marketing ops,proposed,,,"Example row. Fill the lift, coverage and sample from the latest signal check",,,,

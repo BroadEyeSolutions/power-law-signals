@@ -1,0 +1,25 @@
+tier,field,what it holds,where it comes from
+must-have,capture_url,"The page the form was sent from, with its own tracking parameters and nothing else from the address",The page address at submit (capture.js writes it as pls_form_page)
+must-have,referral_url,"The full referral URL: where the visitor was before the page. Where tags survive when something strips them",document.referrer on arrival
+must-have,tracking_choice,"allowed or opted_out. opted_out sends nothing to the ad platforms","capture.js (pls_tracking), from the consent tool"
+must-have,ip_address,The visitor's IP address,"The server, from the request"
+must-have,user_agent,"The browser, which names social apps' built-in browsers","The server, from the request"
+must-have,gclid; gbraid; wbraid,Google's click IDs,The address (Google adds them with auto-tagging on)
+must-have,fbclid,Meta's click ID,The address
+must-have,msclkid,Microsoft's click ID,The address
+must-have,ttclid,TikTok's click ID,The address
+must-have,li_fat_id,LinkedIn's click ID,The address
+must-have,form_id,"The web form's ID, the WFID",Hard-coded on the form
+must-have,said and the answer,"Each self-assessment question's ID, its SAID, with the answer as given and its code",The form and src/signal-rules.json
+must-have,capture_method; brand; event_id,"How the lead got in, the brand, and this submission's ID (the lead ID)",Hard-coded on the form; made on the page
+must-have,said,"Each self-assessment question's SAID, beside its answer and code","The endpoint, from src/signal-rules.json"
+standard,utm_source; utm_medium; utm_campaign; utm_term; utm_content,"The names, in the traditional fields: the platform, the first cut of its spend, the campaign, the keyword or ad set, the ad",The ad's link (docs/02)
+standard,utm_campaignid; utm_adgroupid; utm_adid,"The platform's own IDs, each in its own field, so reports join the platform's one to one",The ad's link (docs/02)
+recommended,landing_page; arrived_at; session_id,"Where and when the visit began, and the visit",capture.js
+recommended,first_utm_source; first_utm_medium; first_utm_campaign; first_landing_page; first_referral_url; first_seen_at,The first arrival this browser recorded,capture.js (browser storage)
+recommended,placement; network; device; matchtype,"Platform detail, where the platform fills it in",The ad's link
+recommended,fbp; fbc,Meta's browser cookies,"The page, when Meta's pixel is on it"
+recommended,consent; consent_text; consent_at,"The checkbox answer, the exact wording shown, and when",The form
+optional,location; position,"Google's physical location ID and ad position ({loc_physical_ms}, {adposition})",The ad's link
+optional,in_app_browser; country,"The app the browser belongs to, and the country from the IP","The server, from the user agent and the IP"
+optional,step; time_to_complete,"Which step of a multi-step form, and how long the form took",The page

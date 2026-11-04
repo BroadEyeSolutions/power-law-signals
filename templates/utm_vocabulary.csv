@@ -1,0 +1,29 @@
+utm_source,utm_medium,meaning,how it's filled
+meta,fb,"Meta ads seen on Facebook. PRO Medium: facebook, as in Meta's spend report",{{site_source_name}} in the ad's URL parameters
+meta,ig,"Meta ads seen on Instagram. PRO Medium: instagram",{{site_source_name}}
+meta,msg,"Meta ads seen in Messenger. PRO Medium: messenger",{{site_source_name}}
+meta,an,"Meta ads seen on the Audience Network. PRO Medium: audience_network",{{site_source_name}}
+google,search,"Google Search campaigns. PRO Medium: Search, as in Google's Campaign type column",the channel custom parameter on the campaign ({_channel})
+google,display,"Google Display campaigns. PRO Medium: Display",channel
+google,video,"Google video (YouTube) campaigns. PRO Medium: Video",channel
+google,performance_max,"Google Performance Max campaigns. PRO Medium: Performance Max",channel
+google,demand_gen,"Google Demand Gen campaigns. PRO Medium: Demand Gen",channel
+google,shopping,"Google Shopping campaigns. PRO Medium: Shopping",channel
+microsoft,search,"Microsoft Advertising search. PRO Medium: Search",static or the platform's dynamic values
+microsoft,audience,"Microsoft Advertising audience ads. PRO Medium: Audience",static
+microsoft,performance_max,"Microsoft Advertising Performance Max. PRO Medium: Performance Max",static
+microsoft,shopping,"Microsoft Advertising Shopping. PRO Medium: Shopping",static
+linkedin,sponsored_updates,"LinkedIn Sponsored Content. PRO Medium: SPONSORED_UPDATES, LinkedIn's campaign type",static per ad set (a campaign before LinkedIn's Oct 2025 rename)
+linkedin,sponsored_inmails,"LinkedIn Message Ads and Conversation Ads. PRO Medium: SPONSORED_INMAILS",static per ad set
+linkedin,text_ad,"LinkedIn Text Ads. PRO Medium: TEXT_AD",static per ad set
+linkedin,dynamic,"LinkedIn Dynamic Ads. PRO Medium: DYNAMIC",static per ad set
+tiktok,tiktok,"TikTok ads seen on TikTok. PRO Medium: TikTok, as in TikTok's placement report",__PLACEMENT__ in the ad's URL parameters
+tiktok,pangle,"TikTok ads seen on Pangle. PRO Medium: Pangle",__PLACEMENT__
+tiktok,global_app_bundle,"TikTok ads seen in the Global App Bundle. PRO Medium: Global App Bundle",__PLACEMENT__
+tiktok,content,"Your own TikTok posts and profile links, not ads",static
+linkedin,content,"Your own LinkedIn posts and profile links, not ads",static
+meta,content,"Your own posts on Facebook or Instagram, not ads",static
+newsletter,email,Your own newsletter,static
+partner,<partner id>,A partner or affiliate link,static per partner
+<the referrer's source>,organic,"A visit with no tags, sourced from its referrer. Set by PRO, never used as a tag",not tagged
+<where it's printed>,offline,"A QR code or link on a printed piece",static per piece

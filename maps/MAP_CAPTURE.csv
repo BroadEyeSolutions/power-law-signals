@@ -1,0 +1,17 @@
+raw_value,pro_capture_method,capture_group,status,override,first_seen,notes
+web_form,Web Form,Web,verified,,2026-11-01,"A form on the site, with its own form ID. Hard-coded on the form"
+web,Web Form,Web,verified,,2026-11-01,"Same, as some CRMs store it"
+popup,Web Form,Web,verified,,2026-11-01,A pop-up form is a web form with its own form ID
+chat,Live Chat,Web,verified,,2026-11-01,Chat on the site. Writes the page it was opened on as the capture URL
+live_chat,Live Chat,Web,verified,,2026-11-01,Same
+lead_ad,Third Party API,Non-Web,verified,,2026-11-01,"Retired raw value for an ad platform's own lead form. Maps to Third Party API"
+instant_form,Third Party API,Non-Web,verified,,2026-11-01,Same as lead_ad
+phone_call,Inbound Call,Non-Web,verified,,2026-11-01,"An inbound call, by tracking number"
+inbound_call,Inbound Call,Non-Web,verified,,2026-11-01,Same
+partner_referral,Referral,Non-Web,verified,,2026-11-01,"A partner, affiliate or customer sent it"
+referral,Referral,Non-Web,verified,,2026-11-01,Same
+api,Third Party API,Non-Web,verified,,2026-11-01,"Delivered by an integration straight into the CRM: an ad platform's own lead form (Meta's instant form, Google's lead form) or a partner's feed"
+import,List,Non-Web,verified,,2026-11-01,A list loaded into the CRM
+list,List,Non-Web,verified,,2026-11-01,Same
+manual,Manual Entry,Non-Web,verified,,2026-11-01,"A rep keyed it in: an event, a business card, a walk-in, self-sourced"
+manual_entry,Manual Entry,Non-Web,verified,,2026-11-01,Same

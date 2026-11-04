@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Example lead form · Broad Eye Solutions Signals and Attribution Blueprint</title>
+  <!-- 1. On every page: keep where the visitor came from. Load it early, before any redirect can drop the address. -->
+  <script src="../src/capture.js"></script>
+  <!-- 2. Your tag manager container goes here, and on both thank-you pages. The thank-you pages push lead_submitted and
+       qualified_conversion, and the tag manager fires on those events, never on a page address (see gtm/README.md). -->
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 34rem; margin: 2rem auto; padding: 0 1rem; color: #0A2647; }
+    label { display: block; margin: .9rem 0 .3rem; font-weight: 600; }
+    input, select { width: 100%; padding: .55rem .6rem; font: inherit; border: 1px solid #b9c2cf; border-radius: 6px; box-sizing: border-box; }
+    .row { display: flex; gap: .8rem; } .row > div { flex: 1; }
+    .check { display: flex; gap: .6rem; align-items: flex-start; font-weight: 400; }
+    .check input { width: auto; margin-top: .3rem; }
+    .hp { position: absolute; left: -9999px; }
+    button { margin-top: 1.2rem; padding: .7rem 1.2rem; font: inherit; font-weight: 700; color: #fff; background: #0A2647; border: 0; border-radius: 6px; }
+    [data-pls-status] { color: #b3261e; margin-top: .6rem; }
+  </style>
+</head>
+<body>
+  <h1>See what your business qualifies for</h1>
+
+  <!-- The form posts to your own endpoint (functions/lead.js). The server's answer picks the page a saved lead goes to:
+       data-pls-next-qualified when the answers clear the line, data-pls-next for every other lead. The pages are for the
+       visitor. Give them neutral addresses, and never put the visitor's details or answers in either one.
+       data-pls-form-id is this form's id in the form map (maps/MAP_FORM.csv). Every form gets its own.
+       data-pls-capture and data-pls-brand are hard-coded: how this door brings leads in, and whose brand it is. -->
+  <form action="/lead" method="post" data-pls-next="/thank-you/" data-pls-next-qualified="/thank-you/next-steps/" data-pls-form-id="WF-0001" data-pls-capture="web_form" data-pls-brand="EX" novalidate>
+    <div class="row">
+      <div><label for="first_name">First name</label><input id="first_name" name="first_name" autocomplete="given-name" required></div>
+      <div><label for="last_name">Last name</label><input id="last_name" name="last_name" autocomplete="family-name" required></div>
+    </div>
+    <label for="email">Work email</label>
+    <input id="email" name="email" type="email" autocomplete="email" required>
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+    <label for="company">Business name</label>
+    <input id="company" name="company" autocomplete="organization" required>
+
+    <!-- The sorting questions. Option VALUES must match the keys in src/signal-rules.json. Labels can change freely. -->
+    <label for="monthly_sales">Average monthly sales</label>
+    <select id="monthly_sales" name="monthly_sales" required>
+      <option value="">Choose one</option>
+      <option value="under_10k">Under $10,000</option>
+      <option value="10k_to_30k">$10,000 to $30,000</option>
+      <option value="30k_to_100k">$30,000 to $100,000</option>
+      <option value="over_100k">Over $100,000</option>
+    </select>
+    <label for="years_in_business">Time in business</label>
+    <select id="years_in_business" name="years_in_business" required>
+      <option value="">Choose one</option>
+      <option value="under_1">Less than a year</option>
+      <option value="1_to_3">1 to 3 years</option>
+      <option value="3_to_5">3 to 5 years</option>
+      <option value="over_5">More than 5 years</option>
+    </select>
+
+    <!-- Every form asks for consent with a checkbox, unticked, giving permission to contact the person in the future,
+         and keeps the exact wording with the lead.
+         The wording covers what the form sends with the answers: the capture URL and the browser details.
+         Have counsel approve the wording for your use. -->
+    <label class="check"><input type="checkbox" name="consent" value="yes" required>
+      <span id="consent-text">You can use what I submit here, including the page I sent it from and my browser details, to respond to this request and to contact me in the future, including by call or text at the number above. Consent isn't a condition of any purchase.</span></label>
+    <input type="hidden" name="consent_text" value="You can use what I submit here, including the page I sent it from and my browser details, to respond to this request and to contact me in the future, including by call or text at the number above. Consent isn't a condition of any purchase.">
+
+    <!-- Honeypot: people never see it, bots fill it in. -->
+    <div class="hp" aria-hidden="true"><label>Company website <input name="company_website" tabindex="-1" autocomplete="off"></label></div>
+
+    <button type="submit">See my options</button>
+    <p data-pls-status role="status"></p>
+  </form>
+
+  <script src="../src/submit.js"></script>
+  <script>PLS.wire(document.querySelector('form'));</script>
+</body>
+</html>

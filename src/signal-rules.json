@@ -1,0 +1,42 @@
+{
+  "_about": "The one place that decides which form answers make a qualified conversion. The server reads this file and decides; the page never does. Each answer band has an ordered code: every 1 means the answer cleared one more band, so a rule of starts_with \"11\" means the third band or higher. Option values on the form must match the keys under codes exactly. Change the rule here, not in the page or the tag manager. Each question has its own ID, its SAID (self-assessment ID), the way each form has its WFID. When a question is asked differently, give it a new SAID and its own codes.",
+  "questions": {
+    "monthly_sales": {
+      "said": "SA-0001",
+      "label": "Average monthly sales",
+      "codes": {
+        "under_10k": "0000",
+        "10k_to_30k": "1000",
+        "30k_to_100k": "1100",
+        "over_100k": "1110"
+      }
+    },
+    "years_in_business": {
+      "said": "SA-0002",
+      "label": "Time in business",
+      "codes": {
+        "under_1": "0000",
+        "1_to_3": "1000",
+        "3_to_5": "1100",
+        "over_5": "1110"
+      }
+    }
+  },
+  "qualified": {
+    "all": [
+      {
+        "question": "monthly_sales",
+        "starts_with": "11"
+      },
+      {
+        "question": "years_in_business",
+        "starts_with": "1"
+      }
+    ]
+  },
+  "value": {
+    "_about": "Optional. What a qualified conversion is worth to you, sent with it. Use the same number on every platform. Leave qualified_conversion at null to send no value.",
+    "qualified_conversion": null,
+    "currency": "USD"
+  }
+}

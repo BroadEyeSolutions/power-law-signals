@@ -1,0 +1,111 @@
+object,group,field,blueprint_field,type,written_by,written,required,notes
+lead,ids,Lead ID,lead_id,text,"The endpoint for web leads, automation for every other track",once,yes,"The event ID of the submission that created the lead. Other tracks make it the same way every time, such as a stable hash of email and date. Unique, read as text, never edited. A prospect keeps it when it becomes a lead"
+lead,ids,CRM record ID,crm_record_id,text,The CRM,once,yes,"The CRM's own ID for the record, kept beside the lead ID. The ID map ties them (docs/01)"
+lead,ids,Company,company_id,link,"Automation, or the team when no rule matches",on change,yes,"The business, one company across its contacts, opportunities and accounts"
+lead,ids,Received at,received_at,datetime,The endpoint or the track's integration,once,yes,When the lead arrived
+lead,ids,Entered as,entered_as,picklist,Automation when the record is created,once,yes,"conversion, prospect or lead, from the track it came in on (docs/01)"
+lead,capture,Brand,brand,picklist,"Hard-coded on the form, or set by the integration",once,yes,The brand the door belongs to. A row in maps/MAP_BRAND.csv
+lead,capture,Capture method,capture_method,picklist,"Hard-coded by the door: the form, the integration or the entry screen",once,yes,"web_form, chat, phone_call, referral, api, import or manual. Never chosen by a person"
+lead,capture,Form ID,form_id,text,The form or the integration,once,yes,"The conversion point: a web form's WFID, a lead form, a tracking number or a feed. A row in maps/MAP_FORM.csv"
+lead,capture,Capture URL,capture_url,long_text,The endpoint,once,yes,"The page the form was sent from, with its allow-listed tracking parameters. On every web and chat lead. Blank on every other track, and the blank is evidence (docs/06)"
+lead,capture,Referral URL,referral_url,long_text,The endpoint,once,yes,The full referral URL
+lead,capture,Landing page,landing_page,url,The endpoint,once,no,"Where the visit began, without its query string"
+lead,capture,Arrived at,arrived_at,datetime,The endpoint,once,no,When the visit began
+lead,capture,Session ID,session_id,text,The endpoint,once,no,"The visit, so product analytics joins the lead"
+lead,tracking,UTM source,utm_source,text,The endpoint,once,yes,"Raw, as it arrived. PRO Source is resolved outside the CRM, from this and the rest of the evidence"
+lead,tracking,UTM medium,utm_medium,text,The endpoint,once,yes,"Raw, as it arrived"
+lead,tracking,UTM campaign,utm_campaign,text,The endpoint,once,yes,The campaign name
+lead,tracking,UTM term,utm_term,text,The endpoint,once,yes,The keyword on search. The ad set or ad group name elsewhere
+lead,tracking,UTM content,utm_content,text,The endpoint,once,yes,The ad name
+lead,tracking,Campaign ID,utm_campaignid,text,The endpoint,once,yes,"The platform's campaign ID, as text at full length"
+lead,tracking,Ad set or ad group ID,utm_adgroupid,text,The endpoint,once,yes,As text at full length
+lead,tracking,Ad ID,utm_adid,text,The endpoint,once,yes,As text at full length
+lead,tracking,Placement,placement,text,The endpoint,once,no,"Platform detail, where the platform fills it in"
+lead,tracking,Network,network,text,The endpoint,once,no,"Platform detail, where the platform fills it in"
+lead,tracking,Device,device,text,The endpoint,once,no,"Platform detail, where the platform fills it in"
+lead,tracking,Match type,matchtype,text,The endpoint,once,no,"Platform detail, where the platform fills it in"
+lead,click_ids,Google click ID,gclid,text,The endpoint,once,yes,Also ties a later result to its click on Google
+lead,click_ids,Google app click ID,gbraid,text,The endpoint,once,yes,
+lead,click_ids,Google web click ID,wbraid,text,The endpoint,once,yes,
+lead,click_ids,Meta click ID,fbclid,text,The endpoint,once,yes,
+lead,click_ids,Microsoft click ID,msclkid,text,The endpoint,once,yes,
+lead,click_ids,TikTok click ID,ttclid,text,The endpoint,once,yes,
+lead,click_ids,LinkedIn click ID,li_fat_id,text,The endpoint,once,yes,
+lead,click_ids,Meta browser cookie,fbp,text,The endpoint,once,no,"Meta's _fbp cookie, when its pixel is on the page. Helps a later result match on Meta"
+lead,click_ids,Meta click cookie,fbc,text,The endpoint,once,no,"Meta's _fbc cookie, when its pixel is on the page"
+lead,first_touch,First UTM source,first_utm_source,text,The endpoint,once,no,The first arrival this browser recorded
+lead,first_touch,First UTM medium,first_utm_medium,text,The endpoint,once,no,
+lead,first_touch,First UTM campaign,first_utm_campaign,text,The endpoint,once,no,
+lead,first_touch,First landing page,first_landing_page,url,The endpoint,once,no,
+lead,first_touch,First referral URL,first_referral_url,long_text,The endpoint,once,no,
+lead,first_touch,First seen at,first_seen_at,datetime,The endpoint,once,no,
+lead,client,IP address,ip_address,text,The endpoint,once,yes,From the request
+lead,client,User agent,user_agent,long_text,The endpoint,once,yes,"The browser, raw. It names social apps' built-in browsers"
+lead,client,In-app browser,in_app_browser,text,The endpoint,once,no,"A hint read from the user agent, such as instagram or facebook"
+lead,client,Country,country,text,The endpoint,once,no,From the IP
+lead,consent,Consent,consent,boolean,The endpoint or the integration,once,when used,When sales will call or text
+lead,consent,Consent wording,consent_text,long_text,The endpoint or the integration,once,when used,The exact wording the visitor saw
+lead,consent,Consent at,consent_at,datetime,The endpoint or the integration,once,when used,
+lead,consent,Tracking choice,tracking_choice,picklist,The endpoint,once,yes,"allowed or opted_out. opted_out sends nothing to the ad platforms, at any stage"
+lead,signal,Answer,<question>,picklist,The endpoint,once,yes,"One field per question in src/signal-rules.json, holding the option value, never the label. A question asked a new way gets a new SAID and new fields"
+lead,signal,Answer code,code_<question>,text,The endpoint,once,yes,"The answer's ordered code (docs/04), one per question"
+lead,signal,Question SAID,said_<question>,text,The endpoint,once,yes,"The SAID of the question that was asked, from src/signal-rules.json. maps/MAP_SAID.csv translates every SAID into the field it fills"
+lead,signal,Qualified,qualified,boolean,The endpoint,once,yes,"True when the answers cleared the line, the leads that fire qualified_conversion"
+lead,contact,First name,first_name,text,"The form, the integration or the team",on change,yes,Never in the extract
+lead,contact,Last name,last_name,text,"The form, the integration or the team",on change,yes,Never in the extract
+lead,contact,Email,email,email,"The form, the integration or the team",on change,yes,Never in the extract. Hashed before it goes to an ad platform
+lead,contact,Phone,phone,phone,"The form, the integration or the team",on change,yes,Never in the extract. Hashed before it goes to an ad platform
+lead,contact,Company name,company,text,"The form, the integration or the team",on change,yes,Never in the extract. company_id carries the join
+lead,working,Lead status,lead_status,picklist,"The team, and automation where a rule moves it",on change,yes,"Values from templates/lead_statuses.csv, plus duplicate, test, spam and out_of_scope as labels the rules file reads. Matched on values, never labels"
+lead,working,Lead track,lead_track,picklist,Automation,on change,yes,active or passive
+lead,working,Owner,owner,link,Automation (the routing rule),on change,yes,"Assigned the moment the lead arrives. In the extract as the CRM's user ID, never a name"
+lead,working,First attempt at,first_attempt_at,datetime,Automation from the phone system or the message log,once,yes,The first call or message
+lead,working,Contacted at,contacted_at,datetime,Automation from a logged conversation,once,yes,"The first connected call or written reply, not the first attempt"
+lead,working,Lost at,lost_at,datetime,Automation when the lead is disqualified,on change,yes,
+lead,working,Lost reason,lost_reason,picklist,The team,on change,yes,"A fixed list of values, never typed"
+lead,working,Non-qualified type,nonqualified_type,picklist,The team,on change,yes,"permanent or reviewable. A reviewable lead is checked again on a schedule"
+lead,working,Duplicate of,duplicate_of,text,Automation or the team,once,yes,"On a record labeled duplicate: the lead ID it repeats. The record is never deleted"
+lead,stages,Stage,stage,picklist,Automation,on change,yes,"The furthest stage reached, in the codes from templates/funnel_stages.csv"
+lead,stages,Stage first reached,<stage>_first_at,datetime,"Automation, on the event that moved the lead",once,yes,"One for each stage the lead holds: conversion, prospect, lead, mql, sal and sql (prospect only where the systems use it). Written when blank, never changed after"
+lead,stages,Stage last reached,<stage>_last_at,datetime,"Automation, on the event that moved the lead",each time reached,yes,"The same stages. Written every time the lead reaches the stage again"
+submission,ids,Event ID,event_id,text,The endpoint or the integration,once,yes,"This submission's own ID. Unique. The first submission's event ID is the lead ID"
+submission,ids,Lead ID,lead_id,text,The endpoint or automation,once,yes,The lead it created or was added to
+submission,ids,Received at,received_at,datetime,The endpoint or the integration,once,yes,
+submission,ids,Matched by,matched_by,picklist,The endpoint or automation,once,yes,"created (it made the lead), lead_id (it carried the ID), crm_match (the CRM matched it, usually on email), merge, or team (a person linked it)"
+submission,capture,Form ID,form_id,text,The endpoint or the integration,once,yes,
+submission,capture,Capture method,capture_method,picklist,The endpoint or the integration,once,yes,
+submission,capture,Capture URL,capture_url,long_text,The endpoint,once,yes,
+submission,capture,"Tracking, click ID and client fields",as on the lead,as on the lead,The endpoint,once,yes,"As this submission sent them, so a later visit never writes over the first one's"
+submission,signal,"Answers, codes and SAIDs","<question>, code_<question> and said_<question>",as on the lead,The endpoint,once,yes,"This submission's answers, each with its code and its question's SAID, so a second set never writes over the first"
+submission,signal,Qualified,qualified,boolean,The endpoint,once,yes,
+submission,consent,Tracking choice,tracking_choice,picklist,The endpoint,once,yes,
+opportunity,ids,Opportunity ID,opportunity_id,text,The CRM,once,yes,The CRM's own ID
+opportunity,ids,Lead ID,lead_id,text,Automation when the lead is converted,once,yes,"Carried from the lead, never typed"
+opportunity,ids,Company,company_id,link,Automation when the lead is converted,once,yes,
+opportunity,ids,Created at,created_at,datetime,The CRM,once,yes,"The conversion, at the SQL"
+opportunity,working,Stage,stage,picklist,The team,on change,yes,"The CRM's own opportunity stages, each mapped by value to sqo, rqo or cw"
+opportunity,working,Amount,amount,currency,The team,on change,no,
+opportunity,working,Decision,decision,picklist,Underwriting or the risk review,on change,when used,Only with underwriting or a risk review
+opportunity,working,Decision reason,decision_reason,picklist,Underwriting or the risk review,on change,when used,"A fixed list of values, never typed"
+opportunity,working,Decision ID,decision_id,text,Underwriting's own system,once,when used,The ID map ties it to the lead ID
+opportunity,working,Lost at,lost_at,datetime,Automation when the opportunity closes lost,on change,yes,
+opportunity,working,Lost reason,lost_reason,picklist,The team,on change,yes,"A fixed list of values, never typed"
+opportunity,stages,Stage first reached,<stage>_first_at,datetime,"Automation, on the event that moved the opportunity",once,yes,"sqo, rqo and cw (rqo only with underwriting). Written when blank, never changed after"
+opportunity,stages,Stage last reached,<stage>_last_at,datetime,"Automation, on the event that moved the opportunity",each time reached,yes,"The same stages. Written every time the opportunity reaches the stage again"
+account,ids,Account ID,account_id,text,"The CRM, billing or the core system",once,yes,
+account,ids,Lead ID,lead_id,text,Automation when the opportunity closes won,once,yes,"Where the system holding the account has no field for it, the ID map ties the account ID to the lead ID"
+account,ids,Opportunity ID,opportunity_id,text,Automation when the opportunity closes won,once,yes,
+account,ids,Company,company_id,link,Automation when the opportunity closes won,once,yes,
+account,ids,Started at,started_at,datetime,The core system or billing,once,yes,
+account,stages,Activation first reached,activation_first_at,datetime,"Automation, from the core system",once,yes,"The first transaction, the first invoice"
+account,stages,Activation last reached,activation_last_at,datetime,"Automation, from the core system",each time reached,yes,"A reactivated account moves it"
+account,stages,Revenue first reached,revenue_first_at,datetime,"Automation, from billing",once,when used,"Where the CRM holds billing data. Revenue by period stays in billing, keyed by account ID"
+account,stages,Revenue last reached,revenue_last_at,datetime,"Automation, from billing",each time reached,when used,
+company,ids,Company ID,company_id,text,The CRM,once,yes,
+company,ids,Company name,name,text,The team or the integration,on change,yes,Never in the extract
+send_log,ids,Lead ID,lead_id,text,The return path,once,yes,"One row per later result sent, kept in the CRM or by the job that sends"
+send_log,ids,Event,event_name,picklist,The return path,once,yes,"The later conversion sent: the stage reached (mql, sql, sqo, cw) or above_line, for leads that qualified on the form only (docs/05). Never for a lead that didn't qualify"
+send_log,ids,Platform,platform,picklist,The return path,once,yes,meta or google
+send_log,ids,Happened at,event_at,datetime,The return path,once,yes,"The stage's first timestamp, or the day the record cleared the value line (its first full month of revenue above the median), sent as the event time"
+send_log,ids,Sent at,sent_at,datetime,The return path,once,yes,
+send_log,ids,Result,result,picklist,The return path,once,yes,"sent, rejected, late (outside the platform's window) or opted_out (nothing sent)"

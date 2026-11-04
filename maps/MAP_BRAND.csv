@@ -1,0 +1,6 @@
+key_type,raw_value,brand_name,pro_brand,status,override,first_seen,notes
+brand_code,EX,Example Co,Brand,verified,,2026-11-01,The main brand. Hard-coded on its forms
+domain,example.com,Example Co,Brand,verified,,2026-11-01,The main site
+brand_code,SB,Example Sister Brand,Non-Brand,verified,,2026-11-01,"A sub-brand launched later, with its own site"
+domain,example-sister.com,Example Sister Brand,Non-Brand,verified,,2026-11-01,The sub-brand's site
+domain,acquired-example.com,Acquired Co,Non-Brand,verified,,2026-11-01,A brand bought with its own site and forms

@@ -1,0 +1,12 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+analysis/sample/*.csv
+maps/_backup/
+.dev.vars
+.env*
+.wrangler/
+*_resolved.csv
+playwright-report/
+test-results/

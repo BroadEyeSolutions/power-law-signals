@@ -1,0 +1,46 @@
+pro_source,raw_value,pro_medium,status,override,first_seen,notes
+meta,fb,facebook,verified,,2026-11-01,"Meta's spend report, Platform column. {{site_source_name}} sends fb"
+meta,facebook,facebook,verified,,2026-11-01,"Meta's spend report, Platform column"
+meta,ig,instagram,verified,,2026-11-01,"{{site_source_name}} sends ig"
+meta,instagram,instagram,verified,,2026-11-01,
+meta,msg,messenger,verified,,2026-11-01,"{{site_source_name}} sends msg"
+meta,messenger,messenger,verified,,2026-11-01,
+meta,an,audience_network,verified,,2026-11-01,"{{site_source_name}} sends an"
+meta,audience_network,audience_network,verified,,2026-11-01,
+google,search,Search,verified,,2026-11-01,"Google's spend report, Campaign type column"
+google,cpc,Search,verified,,2026-11-01,Google's default medium; read as Search
+google,ppc,Search,verified,,2026-11-01,Folded into the vocabulary
+google,sem,Search,verified,,2026-11-01,Folded into the vocabulary
+google,display,Display,verified,,2026-11-01,
+google,gdn,Display,verified,,2026-11-01,Folded into the vocabulary
+google,video,Video,verified,,2026-11-01,Google's video (YouTube) campaigns
+google,youtube,Video,verified,,2026-11-01,Folded into the vocabulary
+google,performance_max,Performance Max,verified,,2026-11-01,
+google,pmax,Performance Max,verified,,2026-11-01,Folded into the vocabulary
+google,performancemax,Performance Max,verified,,2026-11-01,Folded into the vocabulary
+google,demand_gen,Demand Gen,verified,,2026-11-01,
+google,demandgen,Demand Gen,verified,,2026-11-01,Folded into the vocabulary
+google,discovery,Demand Gen,verified,,2026-11-01,Folded into the vocabulary
+google,shopping,Shopping,verified,,2026-11-01,
+microsoft,search,Search,verified,,2026-11-01,"Microsoft Advertising's campaign type. Check against its first export"
+microsoft,cpc,Search,verified,,2026-11-01,Folded into the vocabulary
+microsoft,audience,Audience,verified,,2026-11-01,
+microsoft,native,Audience,verified,,2026-11-01,Folded into the vocabulary
+microsoft,performance_max,Performance Max,verified,,2026-11-01,
+microsoft,pmax,Performance Max,verified,,2026-11-01,Folded into the vocabulary
+microsoft,shopping,Shopping,verified,,2026-11-01,
+linkedin,sponsored_updates,SPONSORED_UPDATES,verified,,2026-11-01,"LinkedIn's campaign type in its reporting API: Sponsored Content. Check it against your first Campaign Manager export and use its wording"
+linkedin,sponsored_inmails,SPONSORED_INMAILS,verified,,2026-11-01,"Message Ads and Conversation Ads"
+linkedin,text_ad,TEXT_AD,verified,,2026-11-01,Text Ads
+linkedin,dynamic,DYNAMIC,verified,,2026-11-01,Dynamic Ads
+linkedin,content,content,verified,,2026-11-01,"Your own posts, not ads"
+linkedin,organic,organic,verified,,2026-11-01,"Legacy hand tag. New links are never tagged organic"
+newsletter,email,email,verified,,2026-11-01,
+meta,content,content,verified,,2026-11-01,"Your own posts, not ads"
+meta,organic,organic,verified,,2026-11-01,"Legacy hand tag. New links are never tagged organic"
+google,organic,organic,verified,,2026-11-01,"Legacy hand tag. New links are never tagged organic"
+microsoft,organic,organic,verified,,2026-11-01,"Legacy hand tag. New links are never tagged organic"
+tiktok,tiktok,TikTok,unverified,,2026-11-01,"TikTok's placement wording. __PLACEMENT__ sends it. Confirm against TikTok's first export"
+tiktok,pangle,Pangle,unverified,,2026-11-01,"TikTok's placement wording. Confirm against TikTok's first export"
+tiktok,global_app_bundle,Global App Bundle,unverified,,2026-11-01,"TikTok's placement wording. Confirm against TikTok's first export"
+tiktok,content,content,verified,,2026-11-01,"Your own posts, not ads"
